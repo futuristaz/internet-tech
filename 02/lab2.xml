@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Steam
+    xmlns="http://zujevas.com/xml/steam"
+    xmlns:st="http://zujevas.com/xml/steam"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+
+    <Genre id="g_action">
+        <Game id="gm_0001" platforms="Windows">
+            <Title>Grand Theft Auto V</Title>
+            <ReleaseDate>2015-04-14</ReleaseDate>
+            <Price xsi:type="DiscountedPriceType" currency="EUR" discountPercent="70" saleEnds="2026-12-02">14.99</Price>
+            <PeakConcurrentPlayers>364548</PeakConcurrentPlayers>
+            <Description>
+                An <b>open-world</b> crime epic set in <i>Los Santos</i>
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_adventure"/>
+            </SecondaryGenres>
+        </Game>
+
+        <Game id="gm_0002" platforms="Windows" xsi:type="ExpandedGameType">
+            <Title>Far Cry 5</Title>
+            <ReleaseDate>2018-03-27</ReleaseDate>
+            <Price currency="EUR">59.99</Price>
+            <PeakConcurrentPlayers>92445</PeakConcurrentPlayers>
+            <Description>
+                Fight a doomsday cult in <i>Hope County, Montana</i>. Explore a <b>vast</b>
+                open world alone or with a friend in co-op.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_adventure"/>
+            </SecondaryGenres>
+            <st:DLC id="dlc_0002_01">
+                <st:Title>Hours of Darkness</st:Title>
+                <st:ReleaseDate>2018-06-05</st:ReleaseDate>
+                <st:Price currency="EUR">11.99</st:Price>
+            </st:DLC>
+        </Game>
+
+        <Game id="gm_0011" platforms="Windows">
+            <Title>Counter-Strike 2</Title>
+            <ReleaseDate>2023-09-27</ReleaseDate>
+            <FreeToPlay/>
+            <PeakConcurrentPlayers>1800000</PeakConcurrentPlayers>
+            <Description>
+                A <b>competitive</b> team shooter where <i>terrorists</i> and
+                <i>counter-terrorists</i> battle over bomb sites in short, tense rounds.
+            </Description>
+        </Game>
+    </Genre>
+
+    <Genre id="g_rpg">
+        <Game id="gm_0003" platforms="Windows" xsi:type="ExpandedGameType">
+            <Title>Assassin's Creed Valhalla</Title>
+            <ReleaseDate>2020-11-10</ReleaseDate>
+            <Price currency="EUR">59.99</Price>
+            <PeakConcurrentPlayers>19181</PeakConcurrentPlayers>
+            <Description>
+                Lead a <b>Viking clan</b> from the fjords of Norway to the kingdoms of 
+                <i>Anglo-Saxon England</i>, raiding settlements and building your own.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_action"/>
+                <GenreRef ref="g_adventure"/>
+            </SecondaryGenres>
+            <st:DLC id="dlc_0003_01">
+                <st:Title>Dawn of Ragnarok</st:Title>
+                <st:ReleaseDate>2022-03-10</st:ReleaseDate>
+                <st:Price currency="EUR">9.99</st:Price>
+            </st:DLC>
+        </Game>
+
+        <Game id="gm_0004" platforms="Windows">
+            <Title>The Witcher 3: Wild Hunt</Title>
+            <ReleaseDate>2015-05-19</ReleaseDate>
+            <Price currency="EUR">49.99</Price>
+            <PeakConcurrentPlayers>103329</PeakConcurrentPlayers>
+            <Description>
+                Play as the monster hunter <b>Geralt of Rivia</b> and search for your adopted
+                daughter across a <i>war-torn</i> fantasy continent full of tough choices.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_action"/>
+            </SecondaryGenres>
+        </Game>
+
+        <Game id="gm_0005" platforms="Windows" xsi:type="ExpandedGameType">
+            <Title>Assassin's Creed Odyssey</Title>
+            <ReleaseDate>2018-10-05</ReleaseDate>
+            <Price currency="EUR">59.99</Price>
+            <PeakConcurrentPlayers>62069</PeakConcurrentPlayers>
+            <Description>
+                Become a <b>Spartan mercenary</b> and shape your own legend in
+                <i>ancient Greece</i>, from epic naval battles to the Peloponnesian War.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_action"/>
+                <GenreRef ref="g_adventure"/>
+            </SecondaryGenres>
+            <st:DLC id="dlc_0005_01">
+                <st:Title>Legacy of the First Blade</st:Title>
+                <st:ReleaseDate>2018-12-04</st:ReleaseDate>
+                <st:Price currency="EUR">24.99</st:Price>
+            </st:DLC>
+        </Game>
+    </Genre>
+
+    <Genre id="g_simulation">
+        <Game id="gm_0006" platforms="Windows macOS Linux" xsi:type="ExpandedGameType">
+            <Title>Euro Truck Simulator 2</Title>
+            <ReleaseDate>2012-10-19</ReleaseDate>
+            <Price currency="EUR">19.99</Price>
+            <PeakConcurrentPlayers>73887</PeakConcurrentPlayers>
+            <Description>
+                Travel across <b>Europe</b> as a king of the road
+                and grow your own trucking company.
+            </Description>
+            <st:DLC id="dlc_0006_01">
+                <st:Title>Nordic Horizons</st:Title>
+                <st:ReleaseDate>2021-05-06</st:ReleaseDate>
+                <st:Price currency="EUR">17.99</st:Price>
+            </st:DLC>
+        </Game>
+
+        <Game id="gm_0007" platforms="Windows macOS Linux" xsi:type="ExpandedGameType">
+            <Title>American Truck Simulator</Title>
+            <ReleaseDate>2016-02-03</ReleaseDate>
+            <Price currency="EUR">19.99</Price>
+            <PeakConcurrentPlayers>19153</PeakConcurrentPlayers>
+            <Description>
+                Haul freight along <b>iconic highways</b> of the western United States,
+                from <i>California</i> deserts to <i>Nevada</i> casinos.
+            </Description>
+            <st:DLC id="dlc_0007_01">
+                <st:Title>Illinois</st:Title>
+                <st:ReleaseDate>2019-06-04</st:ReleaseDate>
+                <st:Price currency="EUR">11.99</st:Price>
+            </st:DLC>
+        </Game>
+
+        <Game id="gm_0008" platforms="Windows macOS Linux" xsi:type="ExpandedGameType">
+            <Title>Cities: Skylines</Title>
+            <ReleaseDate>2015-03-10</ReleaseDate>
+            <Price currency="EUR">27.99</Price>
+            <PeakConcurrentPlayers>60386</PeakConcurrentPlayers>
+            <Description>
+                A modern take on the <b>city-builder</b>: zone districts, manage traffic and
+                budgets, and grow a small town into a <i>thriving metropolis</i>.
+            </Description>
+            <st:DLC id="dlc_0008_01">
+                <st:Title>Race Day</st:Title>
+                <st:ReleaseDate>2023-06-27</st:ReleaseDate>
+                <st:Price currency="EUR">12.99</st:Price>
+            </st:DLC>
+        </Game>
+    </Genre>
+
+    <Genre id="g_adventure">
+        <Game id="gm_0009" platforms="Windows">
+            <Title>Red Dead Redemption 2</Title>
+            <ReleaseDate>2019-12-05</ReleaseDate>
+            <Price currency="EUR">59.99</Price>
+            <PeakConcurrentPlayers>99993</PeakConcurrentPlayers>
+            <Description>
+                Follow outlaw <b>Arthur Morgan</b> and the Van der Linde gang as they run
+                from the law across the <i>fading Wild West</i> in 1899.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_action"/>
+                <GenreRef ref="g_rpg"/>
+            </SecondaryGenres>
+        </Game>
+        
+        <Game id="gm_0010" platforms="Windows macOS Linux">
+            <Title>Shadow of the Tomb Raider</Title>
+            <ReleaseDate>2018-09-14</ReleaseDate>
+            <Price currency="EUR">39.99</Price>
+            <PeakConcurrentPlayers>38368</PeakConcurrentPlayers>
+            <Description>
+                Join <b>Lara Croft</b> in the final chapter of her origin story as she
+                races to stop a Mayan apocalypse through <i>deadly jungles</i> and hidden tombs.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_action"/>
+            </SecondaryGenres>
+        </Game>
+    </Genre>
+
+    <Genre id="g_indie">
+        <Game id="gm_0012" platforms="Windows macOS Linux">
+            <Title>Stardew Valley</Title>
+            <ReleaseDate>2016-02-26</ReleaseDate>
+            <Price xsi:type="IndiePriceType" currency="EUR">13.99</Price>
+            <PeakConcurrentPlayers>236614</PeakConcurrentPlayers>
+            <Description>
+                Inherit your grandfather's <b>old farm</b>, grow crops, raise animals and make
+                friends in <i>Pelican Town</i>, all at your own relaxed pace.
+            </Description>
+            <SecondaryGenres>
+                <GenreRef ref="g_simulation"/>
+                <GenreRef ref="g_rpg"/>
+            </SecondaryGenres>
+        </Game>
+    </Genre>
+</Steam>

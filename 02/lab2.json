@@ -1,0 +1,310 @@
+{
+    "genres": [
+        {
+            "id": "g_action",
+            "games": [
+                {
+                    "id": "gm_0001",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Grand Theft Auto V",
+                    "releaseDate": "2015-04-14",
+                    "price": {
+                        "amount": 14.99,
+                        "currency": "EUR",
+                        "discountPercent": 70,
+                        "saleEnds": "2026-12-02"
+                    },
+                    "peakConcurrentPlayers": 364548,
+                    "description": "An <b>open-world</b> crime epic set in <i>Los Santos</i>",
+                    "secondaryGenres": [
+                        "g_adventure"
+                    ],
+                    "dlc": []
+                },
+                {
+                    "id": "gm_0002",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Far Cry 5",
+                    "releaseDate": "2018-03-27",
+                    "price": {
+                        "amount": 59.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 92445,
+                    "description": "Fight a doomsday cult in <i>Hope County, Montana</i>. Explore a <b>vast</b> open world alone or with a friend in co-op.",
+                    "secondaryGenres": [
+                        "g_adventure"
+                    ],
+                    "dlc": [
+                        {
+                            "id": "dlc_0002_01",
+                            "title": "Hours of Darkness",
+                            "releaseDate": "2018-06-05",
+                            "price": {
+                                "amount": 11.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0011",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Counter-Strike 2",
+                    "releaseDate": "2023-09-27",
+                    "freeToPlay": true,
+                    "peakConcurrentPlayers": 1800000,
+                    "description": "A <b>competitive</b> team shooter where <i>terrorists</i> and <i>counter-terrorists</i> battle over bomb sites in short, tense rounds.",
+                    "secondaryGenres": [],
+                    "dlc": []
+                }
+            ]
+        },
+        {
+            "id": "g_rpg",
+            "games": [
+                {
+                    "id": "gm_0003",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Assassin's Creed Valhalla",
+                    "releaseDate": "2020-11-10",
+                    "price": {
+                        "amount": 59.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 19181,
+                    "description": "Lead a <b>Viking clan</b> from the fjords of Norway to the kingdoms of <i>Anglo-Saxon England</i>, raiding settlements and building your own.",
+                    "secondaryGenres": [
+                        "g_action",
+                        "g_adventure"
+                    ],
+                    "dlc": [
+                        {
+                            "id": "dlc_0003_01",
+                            "title": "Dawn of Ragnarok",
+                            "releaseDate": "2022-03-10",
+                            "price": {
+                                "amount": 9.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0004",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "The Witcher 3: Wild Hunt",
+                    "releaseDate": "2015-05-19",
+                    "price": {
+                        "amount": 49.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 103329,
+                    "description": "Play as the monster hunter <b>Geralt of Rivia</b> and search for your adopted daughter across a <i>war-torn</i> fantasy continent full of tough choices.",
+                    "secondaryGenres": [
+                        "g_action"
+                    ],
+                    "dlc": []
+                },
+                {
+                    "id": "gm_0005",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Assassin's Creed Odyssey",
+                    "releaseDate": "2018-10-05",
+                    "price": {
+                        "amount": 59.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 62069,
+                    "description": "Become a <b>Spartan mercenary</b> and shape your own legend in <i>ancient Greece</i>, from epic naval battles to the Peloponnesian War.",
+                    "secondaryGenres": [
+                        "g_action",
+                        "g_adventure"
+                    ],
+                    "dlc": [
+                        {
+                            "id": "dlc_0005_01",
+                            "title": "Legacy of the First Blade",
+                            "releaseDate": "2018-12-04",
+                            "price": {
+                                "amount": 24.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g_simulation",
+            "games": [
+                {
+                    "id": "gm_0006",
+                    "platforms": [
+                        "Windows",
+                        "macOS",
+                        "Linux"
+                    ],
+                    "title": "Euro Truck Simulator 2",
+                    "releaseDate": "2012-10-19",
+                    "price": {
+                        "amount": 19.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 73887,
+                    "description": "Travel across <b>Europe</b> as a king of the road and grow your own trucking company.",
+                    "secondaryGenres": [],
+                    "dlc": [
+                        {
+                            "id": "dlc_0006_01",
+                            "title": "Nordic Horizons",
+                            "releaseDate": "2021-05-06",
+                            "price": {
+                                "amount": 17.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0007",
+                    "platforms": [
+                        "Windows",
+                        "macOS",
+                        "Linux"
+                    ],
+                    "title": "American Truck Simulator",
+                    "releaseDate": "2016-02-03",
+                    "price": {
+                        "amount": 19.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 19153,
+                    "description": "Haul freight along <b>iconic highways</b> of the western United States, from <i>California</i> deserts to <i>Nevada</i> casinos.",
+                    "secondaryGenres": [],
+                    "dlc": [
+                        {
+                            "id": "dlc_0007_01",
+                            "title": "Illinois",
+                            "releaseDate": "2019-06-04",
+                            "price": {
+                                "amount": 11.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0008",
+                    "platforms": [
+                        "Windows",
+                        "macOS",
+                        "Linux"
+                    ],
+                    "title": "Cities: Skylines",
+                    "releaseDate": "2015-03-10",
+                    "price": {
+                        "amount": 27.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 60386,
+                    "description": "A modern take on the <b>city-builder</b>: zone districts, manage traffic and budgets, and grow a small town into a <i>thriving metropolis</i>.",
+                    "secondaryGenres": [],
+                    "dlc": [
+                        {
+                            "id": "dlc_0008_01",
+                            "title": "Race Day",
+                            "releaseDate": "2023-06-27",
+                            "price": {
+                                "amount": 12.99,
+                                "currency": "EUR"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g_adventure",
+            "games": [
+                {
+                    "id": "gm_0009",
+                    "platforms": [
+                        "Windows"
+                    ],
+                    "title": "Red Dead Redemption 2",
+                    "releaseDate": "2019-12-05",
+                    "price": {
+                        "amount": 59.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 99993,
+                    "description": "Follow outlaw <b>Arthur Morgan</b> and the Van der Linde gang as they run from the law across the <i>fading Wild West</i> in 1899.",
+                    "secondaryGenres": [
+                        "g_action",
+                        "g_rpg"
+                    ],
+                    "dlc": []
+                },
+                {
+                    "id": "gm_0010",
+                    "platforms": [
+                        "Windows",
+                        "macOS",
+                        "Linux"
+                    ],
+                    "title": "Shadow of the Tomb Raider",
+                    "releaseDate": "2018-09-14",
+                    "price": {
+                        "amount": 39.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 38368,
+                    "description": "Join <b>Lara Croft</b> in the final chapter of her origin story as she races to stop a Mayan apocalypse through <i>deadly jungles</i> and hidden tombs.",
+                    "secondaryGenres": [
+                        "g_action"
+                    ],
+                    "dlc": []
+                }
+            ]
+        },
+        {
+            "id": "g_indie",
+            "games": [
+                {
+                    "id": "gm_0012",
+                    "platforms": [
+                        "Windows",
+                        "macOS",
+                        "Linux"
+                    ],
+                    "title": "Stardew Valley",
+                    "releaseDate": "2016-02-26",
+                    "price": {
+                        "amount": 13.99,
+                        "currency": "EUR"
+                    },
+                    "peakConcurrentPlayers": 236614,
+                    "description": "Inherit your grandfather's <b>old farm</b>, grow crops, raise animals and make friends in <i>Pelican Town</i>, all at your own relaxed pace.",
+                    "secondaryGenres": [
+                        "g_simulation",
+                        "g_rpg"
+                    ],
+                    "dlc": []
+                }
+            ]
+        }
+    ]
+}

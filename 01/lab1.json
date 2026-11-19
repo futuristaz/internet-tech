@@ -1,0 +1,167 @@
+{
+    "currency": "EUR",
+    "genres": [
+        {
+            "id": "g_action",
+            "games": [
+                {
+                    "id": "gm_0001",
+                    "title": "Grand Theft Auto V",
+                    "release_date": "2015-04-14",
+                    "price": 29.99,
+                    "peak_concurrent_players": 364548,
+                    "secondary_genres": [
+                        "g_adventure"
+                    ]
+                },
+                {
+                    "id": "gm_0002",
+                    "title": "Far Cry 5",
+                    "release_date": "2018-03-27",
+                    "price": 59.99,
+                    "peak_concurrent_players": 92445,
+                    "secondary_genres": [
+                        "g_adventure"
+                    ],
+                    "dlcs": [
+                        {
+                            "id": "dlc_0002_01",
+                            "title": "Hours of Darkness",
+                            "price": 11.99,
+                            "release_date": "2018-06-05"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g_rpg",
+            "games": [
+                {
+                    "id": "gm_0003",
+                    "title": "Assassin's Creed Valhalla",
+                    "release_date": "2020-11-10",
+                    "price": 59.99,
+                    "peak_concurrent_players": 19181,
+                    "secondary_genres": [
+                        "g_action",
+                        "g_adventure"
+                    ],
+                    "dlcs": [
+                        {
+                            "id": "dlc_0003_01",
+                            "title": "Dawn of Ragnarok",
+                            "price": 9.99,
+                            "release_date": "2022-03-10"
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0004",
+                    "title": "The Witcher 3: Wild Hunt",
+                    "release_date": "2015-05-19",
+                    "price": 49.99,
+                    "peak_concurrent_players": 103329,
+                    "secondary_genres": [
+                        "g_action"
+                    ]
+                },
+                {
+                    "id": "gm_0005",
+                    "title": "Assassin's Creed Odyssey",
+                    "release_date": "2018-10-05",
+                    "price": 59.99,
+                    "peak_concurrent_players": 62069,
+                    "secondary_genres": [
+                        "g_action",
+                        "g_adventure"
+                    ],
+                    "dlcs": [
+                        {
+                            "id": "dlc_0005_01",
+                            "title": "Legacy of the First Blade",
+                            "price": 24.99,
+                            "release_date": "2018-12-04"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g_simulation",
+            "games": [
+                {
+                    "id": "gm_0006",
+                    "title": "Euro Truck Simulator 2",
+                    "release_date": "2012-10-19",
+                    "price": 19.99,
+                    "peak_concurrent_players": 73887,
+                    "dlcs": [
+                        {
+                            "id": "dlc_0006_01",
+                            "title": "Nordic Horizons",
+                            "price": 17.99,
+                            "release_date": "2021-05-06"
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0007",
+                    "title": "American Truck Simulator",
+                    "release_date": "2016-02-03",
+                    "price": 19.99,
+                    "peak_concurrent_players": 19153,
+                    "dlcs": [
+                        {
+                            "id": "dlc_0007_01",
+                            "title": "Illinois",
+                            "price": 11.99,
+                            "release_date": "2019-06-04"
+                        }
+                    ]
+                },
+                {
+                    "id": "gm_0008",
+                    "title": "Cities: Skylines",
+                    "release_date": "2015-03-10",
+                    "price": 27.99,
+                    "peak_concurrent_players": 60386,
+                    "dlcs": [
+                        {
+                            "id": "dlc_0008_01",
+                            "title": "Race Day",
+                            "price": 12.99,
+                            "release_date": "2023-06-27"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g_adventure",
+            "games": [
+                {
+                    "id": "gm_0009",
+                    "title": "Red Dead Redemption 2",
+                    "release_date": "2019-12-05",
+                    "price": 59.99,
+                    "peak_concurrent_players": 99993,
+                    "secondary_genres": [
+                        "g_action",
+                        "g_rpg"
+                    ]
+                },
+                {
+                    "id": "gm_0010",
+                    "title": "Shadow of the Tomb Raider",
+                    "release_date": "2018-09-14",
+                    "price": 39.99,
+                    "peak_concurrent_players": 38368,
+                    "secondary_genres": [
+                        "g_action"
+                    ]
+                }
+            ]
+        }
+    ]
+}
