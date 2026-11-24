@@ -38,6 +38,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Genres
+      summary: Create a genre
+      description: Creates a new genre, optionally with an initial list of games.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Genre'
+            example:
+              id: g_strategy
+              games: []
+      responses:
+        '201':
+          description: Genre created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+        '400':
+          description: Invalid genre data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Genre already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Failed to create genre
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   /api/genres/{genreId}:
     get:
