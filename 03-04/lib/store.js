@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 
 const DATA_FILE = fileURLToPath(new URL('../data/steam.json', import.meta.url));
 
+export class GenreConflictError extends Error {}
+
 export async function loadData() {
   return JSON.parse(await readFile(DATA_FILE, 'utf-8'));
 }
@@ -60,6 +62,18 @@ export async function deleteGenre(genreId) {
 
   if (genreIndex === -1) {
     return null;
+  }
+
+  const genre = data.genres[genreIndex];
+  const hasPrimaryGames = genre.games.length > 0;
+  const hasSecondaryReferences = data.genres.some((item) =>
+    item.games.some((game) => game.secondaryGenres?.includes(genreId))
+  );
+
+  if (hasPrimaryGames || hasSecondaryReferences) {
+    throw new GenreConflictError(
+      `Genre "${genreId}" still has games or is referenced by games`
+    );
   }
 
   const [deletedGenre] = data.genres.splice(genreIndex, 1);

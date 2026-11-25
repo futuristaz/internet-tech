@@ -1,5 +1,11 @@
 import { Router } from 'express';
-import { createGenre, getGenreById, getGenres } from '../lib/store.js';
+import {
+  createGenre,
+  deleteGenre,
+  GenreConflictError,
+  getGenreById,
+  getGenres
+} from '../lib/store.js';
 import { isValidGenre } from '../lib/validation.js';
 
 const router = Router();
@@ -61,6 +67,31 @@ router.post('/', async (req, res) => {
     console.error('Failed to create genre:', error);
     return res.status(500).json({
       error: 'Failed to create genre'
+    });
+  }
+});
+
+router.delete('/:genreId', async (req, res) => {
+  try {
+    const genre = await deleteGenre(req.params.genreId);
+
+    if (!genre) {
+      return res.status(404).json({
+        error: 'Genre not found'
+      });
+    }
+
+    return res.status(204).end();
+  } catch (error) {
+    if (error instanceof GenreConflictError) {
+      return res.status(409).json({
+        error: 'Deleting the genre would leave invalid game relationships'
+      });
+    }
+
+    console.error('Failed to delete genre:', error);
+    return res.status(500).json({
+      error: 'Failed to delete genre'
     });
   }
 });

@@ -105,6 +105,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Genres
+      summary: Delete a genre
+      description: Deletes a genre if no games would be left without a valid parent and no remaining games would reference the deleted genre.
+      parameters:
+        - $ref: '#/components/parameters/GenreId'
+      responses:
+        '204':
+          description: Genre deleted
+        '404':
+          description: Genre not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Deleting the genre would leave invalid game relationships
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
 components:
   parameters:
