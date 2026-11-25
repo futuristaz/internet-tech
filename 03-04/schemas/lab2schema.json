@@ -1,0 +1,233 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://zujevas.com/json/steam.schema.json",
+    "title": "Steam",
+    "type": "object",
+    "properties": {
+        "genres": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "#/definitions/Genre"
+            }
+        }
+    },
+    "required": [
+        "genres"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "GenreId": {
+            "type": "string",
+            "pattern": "^g_[a-z]+$"
+        },
+        "GameId": {
+            "type": "string",
+            "pattern": "^gm_[0-9]{4}$"
+        },
+        "DlcId": {
+            "type": "string",
+            "pattern": "^dlc_[0-9]{4}_[0-9]{2}$"
+        },
+        "Date": {
+            "type": "string",
+            "format": "date"
+        },
+        "Currency": {
+            "type": "string",
+            "enum": [
+                "EUR",
+                "USD",
+                "GBP"
+            ]
+        },
+        "Platform": {
+            "type": "string",
+            "enum": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ]
+        },
+        "Price": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "minimum": 0,
+                    "multipleOf": 0.01
+                },
+                "currency": {
+                    "$ref": "#/definitions/Currency"
+                },
+                "discountPercent": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                },
+                "saleEnds": {
+                    "$ref": "#/definitions/Date"
+                }
+            },
+            "required": [
+                "amount",
+                "currency"
+            ],
+            "additionalProperties": false
+        },
+        "Description": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "minLength": 1
+                },
+                {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "b": {
+                                        "type": "string"
+                                    },
+                                    "i": {
+                                        "type": "string"
+                                    }
+                                },
+                                "minProperties": 1,
+                                "maxProperties": 1,
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                "releaseDate": {
+                    "$ref": "#/definitions/Date"
+                },
+                "price": {
+                    "$ref": "#/definitions/Price"
+                },
+                "freeToPlay": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "title",
+                "releaseDate"
+            ]
+        },
+        "Dlc": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Product"
+                },
+                {
+                    "properties": {
+                        "id": {
+                            "$ref": "#/definitions/DlcId"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "price"
+                    ]
+                }
+            ]
+        },
+        "Game": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Product"
+                },
+                {
+                    "properties": {
+                        "id": {
+                            "$ref": "#/definitions/GameId"
+                        },
+                        "platforms": {
+                            "type": "array",
+                            "minItems": 1,
+                            "maxItems": 3,
+                            "uniqueItems": true,
+                            "items": {
+                                "$ref": "#/definitions/Platform"
+                            }
+                        },
+                        "peakConcurrentPlayers": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "description": {
+                            "$ref": "#/definitions/Description"
+                        },
+                        "secondaryGenres": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "$ref": "#/definitions/GenreId"
+                            }
+                        },
+                        "dlc": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Dlc"
+                            }
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "peakConcurrentPlayers",
+                        "description"
+                    ]
+                }
+            ],
+            "oneOf": [
+                {
+                    "required": [
+                        "price"
+                    ]
+                },
+                {
+                    "required": [
+                        "freeToPlay"
+                    ]
+                }
+            ]
+        },
+        "Genre": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/GenreId"
+                },
+                "games": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/Game"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "games"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

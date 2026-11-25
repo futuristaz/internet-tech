@@ -1,0 +1,252 @@
+openapi: 3.0.3
+
+info:
+  title: Steam REST API
+  version: 1.0.0
+  description: Currently implemented genre endpoints
+
+servers:
+  - url: http://localhost:3000
+
+tags:
+  - name: Genres
+
+paths:
+  /api/genres:
+    get:
+      tags:
+        - Genres
+      summary: Get genre summaries
+      description: Returns each genre ID and the number of games in that genre.
+      responses:
+        '200':
+          description: Genre summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenreSummary'
+              example:
+                - id: g_action
+                  gamesCount: 3
+                - id: g_rpg
+                  gamesCount: 3
+        '500':
+          description: Failed to load genres
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Genres
+      summary: Create a genre
+      description: Creates a new genre, optionally with an initial list of games.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Genre'
+            example:
+              id: g_strategy
+              games: []
+      responses:
+        '201':
+          description: Genre created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+        '400':
+          description: Invalid genre data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Genre already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Failed to create genre
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/genres/{genreId}:
+    get:
+      tags:
+        - Genres
+      summary: Get one genre
+      description: Returns one genre with its complete games list.
+      parameters:
+        - $ref: '#/components/parameters/GenreId'
+      responses:
+        '200':
+          description: Genre details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+        '404':
+          description: Genre not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Failed to load genre
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Genres
+      summary: Delete a genre
+      description: Deletes a genre if no games would be left without a valid parent and no remaining games would reference the deleted genre.
+      parameters:
+        - $ref: '#/components/parameters/GenreId'
+      responses:
+        '204':
+          description: Genre deleted
+        '404':
+          description: Genre not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Deleting the genre would leave invalid game relationships
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Failed to delete genre
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  parameters:
+    GenreId:
+      name: genreId
+      in: path
+      required: true
+      description: Genre identifier
+      schema:
+        type: string
+        pattern: '^g_[a-z]+$'
+        example: g_action
+
+  schemas:
+    Error:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          example: Genre not found
+
+    GenreSummary:
+      type: object
+      required:
+        - id
+        - gamesCount
+      properties:
+        id:
+          type: string
+          pattern: '^g_[a-z]+$'
+          example: g_action
+        gamesCount:
+          type: integer
+          minimum: 0
+          example: 3
+
+    Genre:
+      type: object
+      required:
+        - id
+        - games
+      properties:
+        id:
+          type: string
+          pattern: '^g_[a-z]+$'
+          example: g_action
+        games:
+          type: array
+          items:
+            $ref: '#/components/schemas/Game'
+
+    Game:
+      type: object
+      properties:
+        id:
+          type: string
+          example: gm_0001
+        platforms:
+          type: array
+          items:
+            type: string
+            enum:
+              - Windows
+              - macOS
+              - Linux
+        title:
+          type: string
+          example: Grand Theft Auto V
+        releaseDate:
+          type: string
+          format: date
+        price:
+          $ref: '#/components/schemas/Price'
+        freeToPlay:
+          type: boolean
+        peakConcurrentPlayers:
+          type: integer
+          minimum: 0
+        description:
+          type: string
+        secondaryGenres:
+          type: array
+          items:
+            type: string
+        dlc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dlc'
+
+    Dlc:
+      type: object
+      properties:
+        id:
+          type: string
+          example: dlc_0002_01
+        title:
+          type: string
+        releaseDate:
+          type: string
+          format: date
+        price:
+          $ref: '#/components/schemas/Price'
+
+    Price:
+      type: object
+      properties:
+        amount:
+          type: number
+          minimum: 0
+        currency:
+          type: string
+          enum:
+            - EUR
+            - USD
+            - GBP
